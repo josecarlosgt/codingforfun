@@ -4,7 +4,8 @@ Coding for Fun
 ## Uploading Images to Google Drive with JavaScript
 
 <a href="https://josecarlosgt.github.io/codingforfun/" target="_blank">Link to web form</a>
-[Link to web form](https://josecarlosgt.github.io/codingforfun/){:target="_blank"}
+
+[Link to web form](https://josecarlosgt.github.io/codingforfun/)
 
 [Link to spreadsheet with image submissions](https://docs.google.com/spreadsheets/d/1mbOKiW0b1hxQza26ogBCPrEdfQ2mf-JLH4iRr0xNftA/edit?usp=sharing)
 
