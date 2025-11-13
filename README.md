@@ -57,7 +57,6 @@ Coding for Fun
 </html>
 ```
 
-
 ### Back-end Code (to be executed in Google App Script)
 
 ```JAVASCRIPT
@@ -91,7 +90,5 @@ function doPost(e) {
     return ContentService.createTextOutput("Error: " + err);
   }
 }
-```
-
 ```
 
