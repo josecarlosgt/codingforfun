@@ -9,37 +9,39 @@
 
 
         <body>
+                <h1>Coding for Fun</h1>
+                <h2>Uploading Images to Google Drive using JavaScript</h2>
+                
                 <form action="https://script.google.com/macros/s/AKfycbyhZ-o9v4MOjrdhBWQwPFcz5pS80HKvjlCupqHkLJ47DIvEFEdq_vQiU-fhHnLA3_L8YQ/exec" method="POST">
-                        <input name="location" type="text" placeholder="location" required><br>
-                         <input type="file" id="imageInput" name="image"><br>
+                         <input type="file" id="imageInput" name="image"><br><br>
                         <input type="button" value="Upload Image" onclick="uploadImage()">
                 </form>
 
-<script>
-function uploadImage() {
-  const file = document.getElementById("imageInput").files[0];
-  const reader = new FileReader();
-
-  reader.onload = function () {
-    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwxrGZVie6lTGprHazcaXYrEGjRoqu2DNLw379OIYhdoXqt81KcwlMe_uQzG-pcyE6v/exec"
-    const base64 = reader.result.split(',')[1]; // Remove "data:image/jpeg;base64,"
-
-    // Send to Google Apps Script Web App
-    fetch(APPS_SCRIPT_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-        body: "image=" + encodeURIComponent(base64)
-    })
-    .then(response => response.text())
-    .then(result => alert(result))
-    .catch(error => console.error("Upload failed:", error));
-  };
-
-  reader.readAsDataURL(file); // Triggers `onload` when done
-}
-</script>
+        <script>
+        function uploadImage() {
+          const file = document.getElementById("imageInput").files[0];
+          const reader = new FileReader();
+        
+          reader.onload = function () {
+            const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwxrGZVie6lTGprHazcaXYrEGjRoqu2DNLw379OIYhdoXqt81KcwlMe_uQzG-pcyE6v/exec"
+            const base64 = reader.result.split(',')[1]; // Remove "data:image/jpeg;base64,"
+        
+            // Send to Google Apps Script Web App
+            fetch(APPS_SCRIPT_URL, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+              },
+                body: "image=" + encodeURIComponent(base64)
+            })
+            .then(response => response.text())
+            .then(result => alert(result))
+            .catch(error => console.error("Upload failed:", error));
+          };
+        
+          reader.readAsDataURL(file); // Triggers `onload` when done
+        }
+        </script>
 
         </body>
 </html>
